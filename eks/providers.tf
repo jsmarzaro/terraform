@@ -8,7 +8,7 @@ terraform {
   backend "s3" {
     encrypt        = true
     bucket         = "eks-lab-smarzaro"
-    key            = "vpc.tfstate"
+    key            = "cluster.tfstate"
     profile        = "default"
     region         = "us-east-1"
     dynamodb_table = "dock-tf-locks"
