@@ -18,5 +18,8 @@ module "vpc" {
     Project     = "lab-eks"
   }
 
-
+  public_subnet_tags = {
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+    "kubernetes.io/role/internal-elb"           = "1"
+  }
 }

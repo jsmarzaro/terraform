@@ -12,3 +12,8 @@ variable "profile" {
   type    = string
   default = "default"
 }
+
+variable "cluster_name" {
+  type    = string
+  default = "eks-lab-smarzaro"
+}
