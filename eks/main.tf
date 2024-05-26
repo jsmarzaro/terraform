@@ -27,7 +27,7 @@ module "eks" {
   }
 
   vpc_id     = "vpc-09eab3bfa66d52c4a"
-  subnet_ids = ["subnet-0c12b02e0b4aead72", "subnet-0de46635cc922c252", "subnet-03b8d3bb451b4f803"]
+  subnet_ids = ["subnet-03b6ee804b2286286", "subnet-03b8d3bb451b4f803", "subnet-0fc87cdf8c4987551"]
 
   eks_managed_node_groups = {
     lab = {
@@ -38,17 +38,14 @@ module "eks" {
       instance_types = ["t3.small"]
       capacity_type  = "SPOT"
     }
-
-    tags = {
-      Terraform   = "true"
-      Environment = "hml"
-      Project     = "lab-eks"
-    }
-
-    public_subnet_tags = {
-      "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-      "kubernetes.io/role/internal-elb"           = "1"
-    }
   }
 
+  tags = {
+    Terraform   = "true"
+    Environment = "hml"
+    Project     = "lab-eks"
+  }
+
+
 }
+
